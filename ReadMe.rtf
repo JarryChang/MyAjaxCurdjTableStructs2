@@ -1,0 +1,2739 @@
+{\rtf1\ansi\ansicpg936\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fnil\fcharset134 STSongti-SC-Regular;\f2\froman\fcharset0 Times-Roman;
+\f3\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red46\green46\blue46;\red0\green0\blue233;\red21\green167\blue240;
+\red56\green51\blue48;\red21\green21\blue21;\red83\green85\blue2;\red82\green0\blue83;\red11\green84\blue83;
+\red16\green121\blue2;\red0\green0\blue117;\red115\green0\blue2;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa288
+
+\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
+\'a0\uc0\u8232 
+\f1\fs24 \cf0 \expnd0\expndtw0\kerning0
+\'d4\'ad\'ce\'c4\'a3\'ba{\field{\*\fldinst{HYPERLINK "http://www.simplecodestuffs.com/crud-operations-in-struts-2-using-jtable-jquery-plugin-via-ajax/"}}{\fldrslt 
+\f2 \cf3 \expnd0\expndtw0\kerning0
+\ul \ulc3 http://www.simplecodestuffs.com/crud-operations-in-struts-2-using-jtable-jquery-plugin-via-ajax/}}
+\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
+\uc0\u8232 \'a0\u8232 In the previous article\'a0{\field{\*\fldinst{HYPERLINK "http://www.simplecodestuffs.com/integrating-jquery-jtable-plugin-with-struts-2-framework/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\'93Setting up jQuery jTable plugin with Struts 2 framework\'94}}\'a0I have explained about how to setup jTable plugin in struts 2 application. This article describes on how to implement \'93Ajax based curd operation in Struts 2 using the JQuery jTable plugin, If you have not read the previous articles\'a0{\field{\*\fldinst{HYPERLINK "http://www.simplecodestuffs.com/integrating-jquery-jtable-plugin-with-struts-2-framework/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\'93Setting up jQuery jTable plugin with Struts 2 framework\'94}}\'a0I will recommend that you read that article first because it explains what jTable plugin is and how you can integrate it in Struts 2 application.\uc0\u8232 \'a0 \
+\pard\pardeftab720\sa478
+
+\fs36 \cf5 \expnd0\expndtw0\kerning0
+Steps done to set up our application for jTable \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa288
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\'a0\uc0\u8232 Libraries required for the setup, \
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls1\ilvl0\cf4 \kerning1\expnd0\expndtw0 {\listtext	\'95	}{\field{\*\fldinst{HYPERLINK "http://code.jquery.com/jquery-1.10.2.js"}}{\fldrslt \expnd0\expndtw0\kerning0
+jQuery}}\cf2 \expnd0\expndtw0\kerning0
+\
+\ls1\ilvl0\cf4 \kerning1\expnd0\expndtw0 {\listtext	\'95	}{\field{\*\fldinst{HYPERLINK "http://jqueryui.com/themeroller/"}}{\fldrslt \expnd0\expndtw0\kerning0
+jQuery UI}}\cf2 \expnd0\expndtw0\kerning0
+\
+\ls1\ilvl0\cf4 \kerning1\expnd0\expndtw0 {\listtext	\'95	}{\field{\*\fldinst{HYPERLINK "http://www.jtable.org/downloads/jtable.2.3.0.zip"}}{\fldrslt \expnd0\expndtw0\kerning0
+jTable}}\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+struts2-json-plugin-2.x.x.jar\
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls1\ilvl0\cf4 \kerning1\expnd0\expndtw0 {\listtext	\'95	}{\field{\*\fldinst{HYPERLINK "http://www.simplecodestuffs.com/struts-2-hello-world-application-getting-started-with-struts-2/"}}{\fldrslt \expnd0\expndtw0\kerning0
+Commonly required Struts 2 jars}}\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa288
+\cf2 \expnd0\expndtw0\kerning0
+\'a0\uc0\u8232 Create a dynamic project in eclipse and setup above required libraries as explained\'a0{\field{\*\fldinst{HYPERLINK "http://www.simplecodestuffs.com/integrating-jquery-jtable-plugin-with-struts-2-framework/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+here}}. The final project structure of this looks as below.\uc0\u8232 \'a0\u8232 \u8232 \'a0\u8232 
+\b \cf6 \expnd0\expndtw0\kerning0
+Setup from the browser perspective: jTable
+\b0 \cf2 \expnd0\expndtw0\kerning0
+\uc0\u8232 \'a0 \
+\pard\pardeftab720\sa478
+
+\fs36 \cf5 \expnd0\expndtw0\kerning0
+JSP \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa288
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\'a0 \
+\pard\pardeftab720
+
+\f3 \cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+html\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+head\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+title\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+jTable in \cf8 \expnd0\expndtw0\kerning0
+Struts\cf0 \expnd0\expndtw0\kerning0
+ \cf9 \expnd0\expndtw0\kerning0
+2\cf7 \expnd0\expndtw0\kerning0
+</\cf0 \expnd0\expndtw0\kerning0
+title\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+<!--\cf0 \expnd0\expndtw0\kerning0
+ jTable metro styles\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+-->\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+link href\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"css/metro/blue/jtable.css"\cf0 \expnd0\expndtw0\kerning0
+ rel\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"stylesheet"\cf0 \expnd0\expndtw0\kerning0
+ type\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"text/css"\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+/>\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+link href\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"css/jquery-ui-1.10.3.custom.css"\cf0 \expnd0\expndtw0\kerning0
+ rel\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"stylesheet"\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 type\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"text/css"\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+/>\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\cf7 \expnd0\expndtw0\kerning0
+<!--\cf0 \expnd0\expndtw0\kerning0
+ jTable script file\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+-->\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+script src\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"js/jquery-1.8.2.js"\cf0 \expnd0\expndtw0\kerning0
+ type\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"text/javascript"\cf7 \expnd0\expndtw0\kerning0
+></\cf0 \expnd0\expndtw0\kerning0
+script\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+script src\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"js/jquery-ui-1.10.3.custom.js"\cf0 \expnd0\expndtw0\kerning0
+ type\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"text/javascript"\cf7 \expnd0\expndtw0\kerning0
+></\cf0 \expnd0\expndtw0\kerning0
+script\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+script src\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"js/jquery.jtable.js"\cf0 \expnd0\expndtw0\kerning0
+ type\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"text/javascript"\cf7 \expnd0\expndtw0\kerning0
+></\cf0 \expnd0\expndtw0\kerning0
+script\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+<!--\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+User\cf0 \expnd0\expndtw0\kerning0
+ defined \cf8 \expnd0\expndtw0\kerning0
+Jtable\cf0 \expnd0\expndtw0\kerning0
+ js file \cf7 \expnd0\expndtw0\kerning0
+-->\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+script src\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"js/userDefinedJtable.js"\cf0 \expnd0\expndtw0\kerning0
+ type\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"text/javascript"\cf7 \expnd0\expndtw0\kerning0
+></\cf0 \expnd0\expndtw0\kerning0
+script\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\cf7 \expnd0\expndtw0\kerning0
+</\cf0 \expnd0\expndtw0\kerning0
+head\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+body\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+div style\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"text-align: center;"\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+h3\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+AJAX based CRUD operation in \cf8 \expnd0\expndtw0\kerning0
+Struts\cf0 \expnd0\expndtw0\kerning0
+ \cf9 \expnd0\expndtw0\kerning0
+2\cf0 \expnd0\expndtw0\kerning0
+ using jTable plugin\cf7 \expnd0\expndtw0\kerning0
+</\cf0 \expnd0\expndtw0\kerning0
+h3\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+div id\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"StudentTableContainer"\cf7 \expnd0\expndtw0\kerning0
+></\cf0 \expnd0\expndtw0\kerning0
+div\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+</\cf0 \expnd0\expndtw0\kerning0
+div\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+</\cf0 \expnd0\expndtw0\kerning0
+body\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+</\cf0 \expnd0\expndtw0\kerning0
+html\cf7 \expnd0\expndtw0\kerning0
+>\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa288
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+\'a0 \
+\pard\pardeftab720\sa478
+
+\fs36 \cf5 \expnd0\expndtw0\kerning0
+JS file for implementing CRUD \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa288
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\'a0 \
+\pard\pardeftab720
+
+\f3 \cf0 \expnd0\expndtw0\kerning0
+$\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+document\cf7 \expnd0\expndtw0\kerning0
+).\cf0 \expnd0\expndtw0\kerning0
+ready\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+function\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 $\cf7 \expnd0\expndtw0\kerning0
+(\cf10 \expnd0\expndtw0\kerning0
+'#StudentTableContainer'\cf7 \expnd0\expndtw0\kerning0
+).\cf0 \expnd0\expndtw0\kerning0
+jtable\cf7 \expnd0\expndtw0\kerning0
+(\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 title \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+'Students List'\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 actions \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 listAction \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+'listAction'\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 createAction \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+'createAction'\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 updateAction \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+'updateAction'\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 deleteAction \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+'deleteAction'\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\},\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 fields \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 studentId \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 title \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+'Student Id'\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 width \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+'30%'\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 key \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+true\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 list \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+true\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 edit \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+false\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 create \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+true\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\},\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 name \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 title \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+'Name'\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 width \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+'30%'\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 edit \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+true\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\},\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 department \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 title \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+'Department'\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 width \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+'30%'\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 edit \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+true\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\},\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 emailId \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 title \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+'Email'\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 width \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+'20%'\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 edit \cf7 \expnd0\expndtw0\kerning0
+:\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+true\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\});\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 $\cf7 \expnd0\expndtw0\kerning0
+(\cf10 \expnd0\expndtw0\kerning0
+'#StudentTableContainer'\cf7 \expnd0\expndtw0\kerning0
+).\cf0 \expnd0\expndtw0\kerning0
+jtable\cf7 \expnd0\expndtw0\kerning0
+(\cf10 \expnd0\expndtw0\kerning0
+'load'\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+\});\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa288
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+\'a0\uc0\u8232 I have explained the working of above jTable js file in my previous article\'a0{\field{\*\fldinst{HYPERLINK "http://www.simplecodestuffs.com/integrating-jquery-jtable-plugin-with-struts-2-framework/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\'93Setting up JQuery jTable plugin in Struts 2\uc0\u8243 }}, hence I\'92m not going to explain it again.\uc0\u8232 \'a0\u8232 Now create a student table in Oracle database using the query below. On this table we are going to perform CRUD operation via ajax\u8232 \'a0 \
+\pard\pardeftab720
+
+\f3 \cf0 \expnd0\expndtw0\kerning0
+create table \cf8 \expnd0\expndtw0\kerning0
+Student\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+studentid \cf11 \expnd0\expndtw0\kerning0
+int\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+name varchar\cf7 \expnd0\expndtw0\kerning0
+(\cf9 \expnd0\expndtw0\kerning0
+50\cf7 \expnd0\expndtw0\kerning0
+),\cf0 \expnd0\expndtw0\kerning0
+department varchar\cf7 \expnd0\expndtw0\kerning0
+(\cf9 \expnd0\expndtw0\kerning0
+50\cf7 \expnd0\expndtw0\kerning0
+),\cf0 \expnd0\expndtw0\kerning0
+\
+email varchar\cf7 \expnd0\expndtw0\kerning0
+(\cf9 \expnd0\expndtw0\kerning0
+50\cf7 \expnd0\expndtw0\kerning0
+));\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa288
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+\'a0 \
+\pard\pardeftab720\sa478
+
+\fs36 \cf5 \expnd0\expndtw0\kerning0
+CurdDao \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa288
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+Create a class that performs CRUD operation in database\uc0\u8232 \'a0 \
+\pard\pardeftab720
+
+\f3 \cf11 \expnd0\expndtw0\kerning0
+package\cf0 \expnd0\expndtw0\kerning0
+ com\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+dao\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\cf11 \expnd0\expndtw0\kerning0
+import\cf0 \expnd0\expndtw0\kerning0
+ java\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+sql\cf7 \expnd0\expndtw0\kerning0
+.\cf8 \expnd0\expndtw0\kerning0
+Connection\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\cf11 \expnd0\expndtw0\kerning0
+import\cf0 \expnd0\expndtw0\kerning0
+ java\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+sql\cf7 \expnd0\expndtw0\kerning0
+.\cf8 \expnd0\expndtw0\kerning0
+PreparedStatement\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\cf11 \expnd0\expndtw0\kerning0
+import\cf0 \expnd0\expndtw0\kerning0
+ java\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+sql\cf7 \expnd0\expndtw0\kerning0
+.\cf8 \expnd0\expndtw0\kerning0
+ResultSet\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\cf11 \expnd0\expndtw0\kerning0
+import\cf0 \expnd0\expndtw0\kerning0
+ java\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+sql\cf7 \expnd0\expndtw0\kerning0
+.\cf8 \expnd0\expndtw0\kerning0
+SQLException\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\cf11 \expnd0\expndtw0\kerning0
+import\cf0 \expnd0\expndtw0\kerning0
+ java\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+sql\cf7 \expnd0\expndtw0\kerning0
+.\cf8 \expnd0\expndtw0\kerning0
+Statement\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\cf11 \expnd0\expndtw0\kerning0
+import\cf0 \expnd0\expndtw0\kerning0
+ java\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+util\cf7 \expnd0\expndtw0\kerning0
+.\cf8 \expnd0\expndtw0\kerning0
+ArrayList\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\cf11 \expnd0\expndtw0\kerning0
+import\cf0 \expnd0\expndtw0\kerning0
+ java\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+util\cf7 \expnd0\expndtw0\kerning0
+.\cf8 \expnd0\expndtw0\kerning0
+List\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\cf11 \expnd0\expndtw0\kerning0
+import\cf0 \expnd0\expndtw0\kerning0
+ com\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+jdbc\cf7 \expnd0\expndtw0\kerning0
+.\cf8 \expnd0\expndtw0\kerning0
+DataAccessObject\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\cf11 \expnd0\expndtw0\kerning0
+import\cf0 \expnd0\expndtw0\kerning0
+ com\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+model\cf7 \expnd0\expndtw0\kerning0
+.\cf8 \expnd0\expndtw0\kerning0
+Student\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+class\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+CrudDao\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\cf11 \expnd0\expndtw0\kerning0
+private\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+Connection\cf0 \expnd0\expndtw0\kerning0
+ dbConnection\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\cf11 \expnd0\expndtw0\kerning0
+private\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+PreparedStatement\cf0 \expnd0\expndtw0\kerning0
+ pStmt\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+CrudDao\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 dbConnection \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+DataAccessObject\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getConnection\cf7 \expnd0\expndtw0\kerning0
+();\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+\cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\pard\pardeftab720
+\cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+void\cf0 \expnd0\expndtw0\kerning0
+ addStudent\cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+Student\cf0 \expnd0\expndtw0\kerning0
+ student\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ insertQuery \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+"INSERT INTO STUDENT(STUDENTID, NAME, "\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
++\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf10 \expnd0\expndtw0\kerning0
+"DEPARTMENT, EMAIL) VALUES (?,?,?,?)"\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+try\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 pStmt \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ dbConnection\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+prepareStatement\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+insertQuery\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 pStmt\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setInt\cf7 \expnd0\expndtw0\kerning0
+(\cf9 \expnd0\expndtw0\kerning0
+1\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+ student\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getStudentId\cf7 \expnd0\expndtw0\kerning0
+());\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 pStmt\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setString\cf7 \expnd0\expndtw0\kerning0
+(\cf9 \expnd0\expndtw0\kerning0
+2\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+ student\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getName\cf7 \expnd0\expndtw0\kerning0
+());\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 pStmt\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setString\cf7 \expnd0\expndtw0\kerning0
+(\cf9 \expnd0\expndtw0\kerning0
+3\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+ student\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getDepartment\cf7 \expnd0\expndtw0\kerning0
+());\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 pStmt\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setString\cf7 \expnd0\expndtw0\kerning0
+(\cf9 \expnd0\expndtw0\kerning0
+4\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+ student\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getEmailId\cf7 \expnd0\expndtw0\kerning0
+());\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 pStmt\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+executeUpdate\cf7 \expnd0\expndtw0\kerning0
+();\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+catch\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+SQLException\cf0 \expnd0\expndtw0\kerning0
+ e\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+System\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+err\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+println\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+e\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getMessage\cf7 \expnd0\expndtw0\kerning0
+());\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+\cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\pard\pardeftab720
+\cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+void\cf0 \expnd0\expndtw0\kerning0
+ deleteStudent\cf7 \expnd0\expndtw0\kerning0
+(\cf11 \expnd0\expndtw0\kerning0
+int\cf0 \expnd0\expndtw0\kerning0
+ userId\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ deleteQuery \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+"DELETE FROM STUDENT WHERE STUDENTID = ?"\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+try\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 pStmt \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ dbConnection\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+prepareStatement\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+deleteQuery\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 pStmt\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setInt\cf7 \expnd0\expndtw0\kerning0
+(\cf9 \expnd0\expndtw0\kerning0
+1\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+ userId\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 pStmt\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+executeUpdate\cf7 \expnd0\expndtw0\kerning0
+();\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+catch\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+SQLException\cf0 \expnd0\expndtw0\kerning0
+ e\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+System\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+err\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+println\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+e\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getMessage\cf7 \expnd0\expndtw0\kerning0
+());\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+\cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\pard\pardeftab720
+\cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+void\cf0 \expnd0\expndtw0\kerning0
+ updateStudent\cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+Student\cf0 \expnd0\expndtw0\kerning0
+ student\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+\'a0 \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ updateQuery \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+"UPDATE STUDENT SET NAME = ?, "\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
++\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf10 \expnd0\expndtw0\kerning0
+"DEPARTMENT = ?, EMAIL = ? WHERE STUDENTID = ?"\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+try\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 pStmt \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ dbConnection\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+prepareStatement\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+updateQuery\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 pStmt\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setString\cf7 \expnd0\expndtw0\kerning0
+(\cf9 \expnd0\expndtw0\kerning0
+1\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+ student\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getName\cf7 \expnd0\expndtw0\kerning0
+());\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 pStmt\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setString\cf7 \expnd0\expndtw0\kerning0
+(\cf9 \expnd0\expndtw0\kerning0
+2\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+ student\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getDepartment\cf7 \expnd0\expndtw0\kerning0
+());\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 pStmt\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setString\cf7 \expnd0\expndtw0\kerning0
+(\cf9 \expnd0\expndtw0\kerning0
+3\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+ student\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getEmailId\cf7 \expnd0\expndtw0\kerning0
+());\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 pStmt\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setInt\cf7 \expnd0\expndtw0\kerning0
+(\cf9 \expnd0\expndtw0\kerning0
+4\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+ student\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getStudentId\cf7 \expnd0\expndtw0\kerning0
+());\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 pStmt\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+executeUpdate\cf7 \expnd0\expndtw0\kerning0
+();\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+catch\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+SQLException\cf0 \expnd0\expndtw0\kerning0
+ e\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+System\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+err\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+println\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+e\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getMessage\cf7 \expnd0\expndtw0\kerning0
+());\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+\cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\pard\pardeftab720
+\cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+List\cf7 \expnd0\expndtw0\kerning0
+<\cf8 \expnd0\expndtw0\kerning0
+Student\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+ getAllStudents\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+List\cf7 \expnd0\expndtw0\kerning0
+<\cf8 \expnd0\expndtw0\kerning0
+Student\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+ students \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+new\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+ArrayList\cf7 \expnd0\expndtw0\kerning0
+<\cf8 \expnd0\expndtw0\kerning0
+Student\cf7 \expnd0\expndtw0\kerning0
+>();\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ query \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+"SELECT * FROM STUDENT ORDER BY STUDENTID"\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+try\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+Statement\cf0 \expnd0\expndtw0\kerning0
+ stmt \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ dbConnection\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+createStatement\cf7 \expnd0\expndtw0\kerning0
+();\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+ResultSet\cf0 \expnd0\expndtw0\kerning0
+ rs \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ stmt\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+executeQuery\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+query\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+while\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+rs\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+next\cf7 \expnd0\expndtw0\kerning0
+())\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+Student\cf0 \expnd0\expndtw0\kerning0
+ student \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+new\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+Student\cf7 \expnd0\expndtw0\kerning0
+();\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 student\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setStudentId\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+rs\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getInt\cf7 \expnd0\expndtw0\kerning0
+(\cf10 \expnd0\expndtw0\kerning0
+"STUDENTID"\cf7 \expnd0\expndtw0\kerning0
+));\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 student\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setName\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+rs\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getString\cf7 \expnd0\expndtw0\kerning0
+(\cf10 \expnd0\expndtw0\kerning0
+"NAME"\cf7 \expnd0\expndtw0\kerning0
+));\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 student\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setDepartment\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+rs\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getString\cf7 \expnd0\expndtw0\kerning0
+(\cf10 \expnd0\expndtw0\kerning0
+"DEPARTMENT"\cf7 \expnd0\expndtw0\kerning0
+));\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 student\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setEmailId\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+rs\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getString\cf7 \expnd0\expndtw0\kerning0
+(\cf10 \expnd0\expndtw0\kerning0
+"EMAIL"\cf7 \expnd0\expndtw0\kerning0
+));\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 students\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+add\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+student\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+catch\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+SQLException\cf0 \expnd0\expndtw0\kerning0
+ e\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+System\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+err\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+println\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+e\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getMessage\cf7 \expnd0\expndtw0\kerning0
+());\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ students\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+\cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+\}\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa288
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+I hope the above code is self explanatory\uc0\u8232 \'a0\u8232 
+\b \cf6 \expnd0\expndtw0\kerning0
+Setup from the server\'92s perspective: Servlet
+\b0 \cf2 \expnd0\expndtw0\kerning0
+\uc0\u8232 \'a0\u8232 In Struts 2 Action class, I have defined 4 method- create, read, update and delete to perform CRUD operations. Since jTable accepts data only in Json format, so we are converting this List (Java Object) to Json(Javascript object Notation) format using struts2-json-plugin.jar. \
+**Update: In the article\'a0{\field{\*\fldinst{HYPERLINK "http://www.simplecodestuffs.com/ajax-implementation-in-struts-2-using-jquery-and-json/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+AJAX implementation in Struts 2 using JQuery and JSON}}\'a0I have explained in detail about how to use struts2-json-plugin.jar clearly, So if you are not aware of how struts2-json-plugin works, then please go thorough the above mentioned link.\uc0\u8232 \'a0 \
+\pard\pardeftab720\sa478
+
+\fs36 \cf5 \expnd0\expndtw0\kerning0
+Action class \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa288
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\'a0 \
+\pard\pardeftab720
+
+\f3 \cf11 \expnd0\expndtw0\kerning0
+package\cf0 \expnd0\expndtw0\kerning0
+ com\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+action\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\cf11 \expnd0\expndtw0\kerning0
+import\cf0 \expnd0\expndtw0\kerning0
+ java\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+io\cf7 \expnd0\expndtw0\kerning0
+.\cf8 \expnd0\expndtw0\kerning0
+IOException\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\cf11 \expnd0\expndtw0\kerning0
+import\cf0 \expnd0\expndtw0\kerning0
+ java\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+util\cf7 \expnd0\expndtw0\kerning0
+.\cf8 \expnd0\expndtw0\kerning0
+List\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\cf11 \expnd0\expndtw0\kerning0
+import\cf0 \expnd0\expndtw0\kerning0
+ com\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+dao\cf7 \expnd0\expndtw0\kerning0
+.\cf8 \expnd0\expndtw0\kerning0
+CrudDao\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\cf11 \expnd0\expndtw0\kerning0
+import\cf0 \expnd0\expndtw0\kerning0
+ com\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+model\cf7 \expnd0\expndtw0\kerning0
+.\cf8 \expnd0\expndtw0\kerning0
+Student\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\cf11 \expnd0\expndtw0\kerning0
+import\cf0 \expnd0\expndtw0\kerning0
+ com\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+opensymphony\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+xwork2\cf7 \expnd0\expndtw0\kerning0
+.\cf8 \expnd0\expndtw0\kerning0
+Action\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+class\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+JtableAction\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+private\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+CrudDao\cf0 \expnd0\expndtw0\kerning0
+ dao \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+new\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+CrudDao\cf7 \expnd0\expndtw0\kerning0
+();\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+private\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+List\cf7 \expnd0\expndtw0\kerning0
+<\cf8 \expnd0\expndtw0\kerning0
+Student\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+ records\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+private\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ result\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+private\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ message\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+private\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+Student\cf0 \expnd0\expndtw0\kerning0
+ record\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+private\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+int\cf0 \expnd0\expndtw0\kerning0
+ studentId\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\'a0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+private\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ name\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+private\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ department\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+private\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ emailId\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ list\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+try\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf12 \expnd0\expndtw0\kerning0
+// Fetch Data from Student Table\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 records \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ dao\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getAllStudents\cf7 \expnd0\expndtw0\kerning0
+();\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 result \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+"OK"\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+catch\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+Exception\cf0 \expnd0\expndtw0\kerning0
+ e\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 result \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+"ERROR"\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 message \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ e\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getMessage\cf7 \expnd0\expndtw0\kerning0
+();\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+System\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+err\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+println\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+e\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getMessage\cf7 \expnd0\expndtw0\kerning0
+());\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+Action\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+SUCCESS\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ create\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+throws\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+IOException\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 record \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+new\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+Student\cf7 \expnd0\expndtw0\kerning0
+();\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 record\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setStudentId\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+studentId\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 record\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setName\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+name\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 record\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setDepartment\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+department\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 record\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setEmailId\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+emailId\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+try\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf12 \expnd0\expndtw0\kerning0
+// Create new record\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 dao\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+addStudent\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+record\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 result \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+"OK"\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+catch\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+Exception\cf0 \expnd0\expndtw0\kerning0
+ e\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 result \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+"ERROR"\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 message \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ e\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getMessage\cf7 \expnd0\expndtw0\kerning0
+();\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+System\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+err\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+println\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+e\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getMessage\cf7 \expnd0\expndtw0\kerning0
+());\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+Action\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+SUCCESS\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\'a0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ update\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+throws\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+IOException\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+Student\cf0 \expnd0\expndtw0\kerning0
+ student \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+new\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+Student\cf7 \expnd0\expndtw0\kerning0
+();\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 student\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setStudentId\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+studentId\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 student\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setName\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+name\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 student\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setDepartment\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+department\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 student\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+setEmailId\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+emailId\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+try\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf12 \expnd0\expndtw0\kerning0
+// Update existing record\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 dao\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+updateStudent\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+student\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 result \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+"OK"\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+catch\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+Exception\cf0 \expnd0\expndtw0\kerning0
+ e\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 result \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+"ERROR"\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 message \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ e\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getMessage\cf7 \expnd0\expndtw0\kerning0
+();\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+System\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+err\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+println\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+e\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getMessage\cf7 \expnd0\expndtw0\kerning0
+());\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+Action\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+SUCCESS\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+delete\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+throws\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+IOException\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf12 \expnd0\expndtw0\kerning0
+// Delete record\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+try\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 dao\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+deleteStudent\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+studentId\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 result \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+"OK"\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+catch\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+Exception\cf0 \expnd0\expndtw0\kerning0
+ e\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 result \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+"ERROR"\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 message \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ e\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getMessage\cf7 \expnd0\expndtw0\kerning0
+();\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+System\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+err\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+println\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+e\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getMessage\cf7 \expnd0\expndtw0\kerning0
+());\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+Action\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+SUCCESS\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+int\cf0 \expnd0\expndtw0\kerning0
+ getStudentId\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ studentId\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ getName\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ name\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ getDepartment\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ department\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ getEmailId\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ emailId\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+void\cf0 \expnd0\expndtw0\kerning0
+ setStudentId\cf7 \expnd0\expndtw0\kerning0
+(\cf11 \expnd0\expndtw0\kerning0
+int\cf0 \expnd0\expndtw0\kerning0
+ studentId\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+this\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+studentId \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ studentId\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+void\cf0 \expnd0\expndtw0\kerning0
+ setName\cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ name\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+this\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+name \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ name\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+void\cf0 \expnd0\expndtw0\kerning0
+ setDepartment\cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ department\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+this\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+department \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ department\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+void\cf0 \expnd0\expndtw0\kerning0
+ setEmailId\cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ emailId\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+this\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+emailId \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ emailId\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+Student\cf0 \expnd0\expndtw0\kerning0
+ getRecord\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ record\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+void\cf0 \expnd0\expndtw0\kerning0
+ setRecord\cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+Student\cf0 \expnd0\expndtw0\kerning0
+ record\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+this\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+record \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ record\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+List\cf7 \expnd0\expndtw0\kerning0
+<\cf8 \expnd0\expndtw0\kerning0
+Student\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+ getRecords\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ records\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ getResult\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ result\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ getMessage\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ message\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+void\cf0 \expnd0\expndtw0\kerning0
+ setRecords\cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+List\cf7 \expnd0\expndtw0\kerning0
+<\cf8 \expnd0\expndtw0\kerning0
+Student\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+ records\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+this\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+records \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ records\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+void\cf0 \expnd0\expndtw0\kerning0
+ setResult\cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ result\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+this\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+result \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ result\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+void\cf0 \expnd0\expndtw0\kerning0
+ setMessage\cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ message\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+this\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+message \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ message\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+\cf7 \expnd0\expndtw0\kerning0
+\}\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa288
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+\'a0\uc0\u8232 If you read my article on\'a0{\field{\*\fldinst{HYPERLINK "http://www.simplecodestuffs.com/ajax-based-crud-operations-in-jsp-and-servlet-using-jtable-jquery-plug-in/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+CRUD Operations in Java Web Applications using jTable jQuery plugin via Ajax}}\'a0then you might have noted once difference here, i.e. I have not created any request or response object in action class to get the student parameters, because those parameter from jsp file\'a0{\field{\*\fldinst{HYPERLINK "http://www.simplecodestuffs.com/ajax-implementation-in-struts-2-using-jquery-and-json/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+auto bounded to my struts 2 action}}, this is done via struts2-jquery-plugin. One only requirement for this parameter to be passed from jsp is, you have create the member variable for those parameter in action class along with getters and setters as in above file.\uc0\u8232 \'a0 \
+You might be interested to read: \
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls2\ilvl0\cf4 \kerning1\expnd0\expndtw0 {\listtext	\'95	}{\field{\*\fldinst{HYPERLINK "http://www.simplecodestuffs.com/integrating-jquery-datatable-with-struts2-using-ajax-to-implement-gridview/"}}{\fldrslt \expnd0\expndtw0\kerning0
+GridView in struts 2}}\cf2 \expnd0\expndtw0\kerning0
+\
+\ls2\ilvl0\cf4 \kerning1\expnd0\expndtw0 {\listtext	\'95	}{\field{\*\fldinst{HYPERLINK "http://www.simplecodestuffs.com/ajax-implementation-in-struts-2/"}}{\fldrslt \expnd0\expndtw0\kerning0
+Ajax implementation in Struts 2 without jQuery plugin}}\cf2 \expnd0\expndtw0\kerning0
+\
+\ls2\ilvl0\cf4 \kerning1\expnd0\expndtw0 {\listtext	\'95	}{\field{\*\fldinst{HYPERLINK "http://www.simplecodestuffs.com/tab-style-login-and-signup-example-using-jquery-in-java-web-application/"}}{\fldrslt \expnd0\expndtw0\kerning0
+Tab Style Login and Signup example using jQuery in Java web application}}\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa288
+\cf2 \expnd0\expndtw0\kerning0
+\'a0\uc0\u8232 I have explained in detail about difference response generated for create, read, update and delete operation in the article{\field{\*\fldinst{HYPERLINK "http://www.simplecodestuffs.com/ajax-based-crud-operations-in-jsp-and-servlet-using-jtable-jquery-plug-in/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+CRUD Operations in Java Web Applications using jTable jQuery plugin via Ajax}}, So please refer to this article mentioned above, if you are not aware of the different response created for CRUD operation in Jtable plugin.\uc0\u8232 \'a0 \
+\pard\pardeftab720\sa478
+
+\fs36 \cf5 \expnd0\expndtw0\kerning0
+Jtable Issue related to Struts 2 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa288
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\'a0\uc0\u8232 As mentioned in my\'a0{\field{\*\fldinst{HYPERLINK "http://www.simplecodestuffs.com/integrating-jquery-jtable-plugin-with-struts-2-framework/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+previous article}}\'a0, the property names of jTable plugin are case sensitive. Only \'93Result\'94, \'93Records\'94 and \'93Message\'94 will work. In struts 2 the \'93json response\'94 generated is in lower case[\'93result\'94, \'93records\'94 and \'93message\'94], hence I edited the jtable.js to replace Result to result, Records to records and Message to message then it worked. \
+\pard\pardeftab720\sa288
+
+\b \cf6 \expnd0\expndtw0\kerning0
+**Note:
+\b0 \cf2 \expnd0\expndtw0\kerning0
+\'a0Along with the above keyword replace\'a0
+\b \cf6 \expnd0\expndtw0\kerning0
+TotalRecordCount\'a0
+\b0 \cf2 \expnd0\expndtw0\kerning0
+to\'a0
+\b \cf6 \expnd0\expndtw0\kerning0
+totalRecordCount
+\b0 \cf2 \expnd0\expndtw0\kerning0
+, since this parameter will be used to display pagination count (Which I will implement in upcoming tutorial) \
+\'a0 \
+\pard\pardeftab720\sa478
+
+\fs36 \cf5 \expnd0\expndtw0\kerning0
+Model class \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa288
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\'a0\uc0\u8232 Create Model class used in the controller, which will have getters and setters for\'a0
+\b \cf6 \expnd0\expndtw0\kerning0
+fields
+\b0 \cf2 \expnd0\expndtw0\kerning0
+\'a0specified in jTable script. \
+\pard\pardeftab720
+
+\f3 \cf11 \expnd0\expndtw0\kerning0
+package\cf0 \expnd0\expndtw0\kerning0
+ com\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+model\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+class\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+Student\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+private\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+int\cf0 \expnd0\expndtw0\kerning0
+ studentId\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+private\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ name\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+private\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ department\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+private\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ emailId\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+int\cf0 \expnd0\expndtw0\kerning0
+ getStudentId\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ studentId\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ getName\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ name\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ getDepartment\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ department\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ getEmailId\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ emailId\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+void\cf0 \expnd0\expndtw0\kerning0
+ setStudentId\cf7 \expnd0\expndtw0\kerning0
+(\cf11 \expnd0\expndtw0\kerning0
+int\cf0 \expnd0\expndtw0\kerning0
+ studentId\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+this\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+studentId \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ studentId\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+void\cf0 \expnd0\expndtw0\kerning0
+ setName\cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ name\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+this\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+name \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ name\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+void\cf0 \expnd0\expndtw0\kerning0
+ setDepartment\cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ department\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+this\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+department \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ department\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+void\cf0 \expnd0\expndtw0\kerning0
+ setEmailId\cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ emailId\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+this\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+emailId \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ emailId\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+\cf7 \expnd0\expndtw0\kerning0
+\}\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa288
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+\'a0 \
+\pard\pardeftab720\sa478
+
+\fs36 \cf5 \expnd0\expndtw0\kerning0
+DAO Class \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa288
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\'a0\uc0\u8232 Create utility class which connect to database Using Oracle JDBC driver \
+\pard\pardeftab720
+
+\f3 \cf11 \expnd0\expndtw0\kerning0
+package\cf0 \expnd0\expndtw0\kerning0
+ com\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+jdbc\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\cf11 \expnd0\expndtw0\kerning0
+import\cf0 \expnd0\expndtw0\kerning0
+ java\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+sql\cf7 \expnd0\expndtw0\kerning0
+.\cf8 \expnd0\expndtw0\kerning0
+Connection\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\cf11 \expnd0\expndtw0\kerning0
+import\cf0 \expnd0\expndtw0\kerning0
+ java\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+sql\cf7 \expnd0\expndtw0\kerning0
+.\cf8 \expnd0\expndtw0\kerning0
+DriverManager\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+class\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+DataAccessObject\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\cf11 \expnd0\expndtw0\kerning0
+private\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+static\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+Connection\cf0 \expnd0\expndtw0\kerning0
+ connection \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+null\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\cf11 \expnd0\expndtw0\kerning0
+public\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+static\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+Connection\cf0 \expnd0\expndtw0\kerning0
+ getConnection\cf7 \expnd0\expndtw0\kerning0
+()\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+if\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+connection \cf7 \expnd0\expndtw0\kerning0
+!=\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+null\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ connection\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+else\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf12 \expnd0\expndtw0\kerning0
+// database URL\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+String\cf0 \expnd0\expndtw0\kerning0
+ dbUrl \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+"jdbc:oracle:thin:@localhost:1521:XE"\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+try\cf0 \expnd0\expndtw0\kerning0
+ \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf8 \expnd0\expndtw0\kerning0
+Class\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+forName\cf7 \expnd0\expndtw0\kerning0
+(\cf10 \expnd0\expndtw0\kerning0
+"oracle.jdbc.driver.OracleDriver"\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf12 \expnd0\expndtw0\kerning0
+// set the url, username and password for the database\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 connection \cf7 \expnd0\expndtw0\kerning0
+=\cf0 \expnd0\expndtw0\kerning0
+ \cf8 \expnd0\expndtw0\kerning0
+DriverManager\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+getConnection\cf7 \expnd0\expndtw0\kerning0
+(\cf0 \expnd0\expndtw0\kerning0
+dbUrl\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+"system"\cf7 \expnd0\expndtw0\kerning0
+,\cf0 \expnd0\expndtw0\kerning0
+ \cf10 \expnd0\expndtw0\kerning0
+"admin"\cf7 \expnd0\expndtw0\kerning0
+);\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+catch\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+(\cf8 \expnd0\expndtw0\kerning0
+Exception\cf0 \expnd0\expndtw0\kerning0
+ e\cf7 \expnd0\expndtw0\kerning0
+)\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+\{\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 e\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+printStackTrace\cf7 \expnd0\expndtw0\kerning0
+();\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf11 \expnd0\expndtw0\kerning0
+return\cf0 \expnd0\expndtw0\kerning0
+ connection\cf7 \expnd0\expndtw0\kerning0
+;\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+\}\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+\cf7 \expnd0\expndtw0\kerning0
+\}\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa288
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+\'a0 \
+\pard\pardeftab720\sa478
+
+\fs36 \cf5 \expnd0\expndtw0\kerning0
+Struts.xml \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa288
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\'a0\uc0\u8232 Make sure that you have the following mapping in struts.xml \
+\pard\pardeftab720
+
+\f3 \cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+struts\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+<\cf11 \expnd0\expndtw0\kerning0
+package\cf0 \expnd0\expndtw0\kerning0
+ name\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"default"\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+extends\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"json-default"\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+action name\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"*Action"\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+class\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"com.action.JtableAction"\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 method\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"\{1\}"\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+result type\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"json"\cf7 \expnd0\expndtw0\kerning0
+>/\cf0 \expnd0\expndtw0\kerning0
+index\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+jsp\cf7 \expnd0\expndtw0\kerning0
+</\cf0 \expnd0\expndtw0\kerning0
+result\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+</\cf0 \expnd0\expndtw0\kerning0
+action\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+action name\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"getJSONResult"\cf0 \expnd0\expndtw0\kerning0
+ \cf11 \expnd0\expndtw0\kerning0
+class\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"com.action.JtableAction"\cf0 \expnd0\expndtw0\kerning0
+ method\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"list"\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+result type\cf7 \expnd0\expndtw0\kerning0
+=\cf10 \expnd0\expndtw0\kerning0
+"json"\cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+/>\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+</\cf0 \expnd0\expndtw0\kerning0
+action\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+</\cf11 \expnd0\expndtw0\kerning0
+package\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+</\cf0 \expnd0\expndtw0\kerning0
+struts\cf7 \expnd0\expndtw0\kerning0
+>\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa288
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+\'a0 \
+\pard\pardeftab720\sa478
+
+\fs36 \cf5 \expnd0\expndtw0\kerning0
+web.xml \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa288
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\'a0 \
+\pard\pardeftab720
+
+\f3 \cf0 \expnd0\expndtw0\kerning0
+ \cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+filter\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+filter\cf7 \expnd0\expndtw0\kerning0
+-\cf0 \expnd0\expndtw0\kerning0
+name\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+struts2\cf7 \expnd0\expndtw0\kerning0
+</\cf0 \expnd0\expndtw0\kerning0
+filter\cf7 \expnd0\expndtw0\kerning0
+-\cf0 \expnd0\expndtw0\kerning0
+name\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+filter\cf7 \expnd0\expndtw0\kerning0
+-\cf11 \expnd0\expndtw0\kerning0
+class\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 org\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+apache\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+struts2\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+dispatcher\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+ng\cf7 \expnd0\expndtw0\kerning0
+.\cf0 \expnd0\expndtw0\kerning0
+filter\cf7 \expnd0\expndtw0\kerning0
+.\cf8 \expnd0\expndtw0\kerning0
+StrutsPrepareAndExecuteFilter\cf0 \expnd0\expndtw0\kerning0
+\
+\cf7 \expnd0\expndtw0\kerning0
+</\cf0 \expnd0\expndtw0\kerning0
+filter\cf7 \expnd0\expndtw0\kerning0
+-\cf11 \expnd0\expndtw0\kerning0
+class\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+ \cf7 \expnd0\expndtw0\kerning0
+</\cf0 \expnd0\expndtw0\kerning0
+filter\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+ \cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+filter\cf7 \expnd0\expndtw0\kerning0
+-\cf0 \expnd0\expndtw0\kerning0
+mapping\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+filter\cf7 \expnd0\expndtw0\kerning0
+-\cf0 \expnd0\expndtw0\kerning0
+name\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+struts2\cf7 \expnd0\expndtw0\kerning0
+</\cf0 \expnd0\expndtw0\kerning0
+filter\cf7 \expnd0\expndtw0\kerning0
+-\cf0 \expnd0\expndtw0\kerning0
+name\cf7 \expnd0\expndtw0\kerning0
+>\cf0 \expnd0\expndtw0\kerning0
+\
+\'a0\'a0 \cf7 \expnd0\expndtw0\kerning0
+<\cf0 \expnd0\expndtw0\kerning0
+url\cf7 \expnd0\expndtw0\kerning0
+-\cf0 \expnd0\expndtw0\kerning0
+pattern\cf7 \expnd0\expndtw0\kerning0
+>\cf12 \expnd0\expndtw0\kerning0
+/*</url-pattern>\
+ </filter-mapping>\
+ <welcome-file-list>\
+\'a0\'a0 <welcome-file>index.jsp</welcome-file>\
+ </welcome-file-list>\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa288
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+\'a0 \
+\pard\pardeftab720\sa478
+
+\fs36 \cf5 \expnd0\expndtw0\kerning0
+Demo \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa288
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\'a0\uc0\u8232 On running the application\u8232 \'a0\u8232 \u8232 \'a0\u8232 On clicking \'91Add new record\'92\u8232 \u8232 \'a0\u8232 Now the new record will be added with fade out animation\u8232 \u8232 \'a0\u8232 On clicking edit button\u8232 \u8232 \'a0\u8232 On clicking delete button\u8232 \u8232 \'a0\u8232 In the next article\'a0{\field{\*\fldinst{HYPERLINK "http://www.simplecodestuffs.com/pagination-in-struts-2-using-jquery-jtable-plugin/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+Pagination in Struts 2 using jQuery jTable plugin}}\'a0I have implemented paging feature in the CRUD example.\uc0\u8232 \'a0\u8232  \
+\'a0 \
+\pard\pardeftab720\sa478
+
+\fs36 \cf5 \expnd0\expndtw0\kerning0
+Reference \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa288
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\'a0\uc0\u8232 {\field{\*\fldinst{HYPERLINK "http://jtable.org/ApiReference"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+jTable official website}}\uc0\u8232 {\field{\*\fldinst{HYPERLINK "http://www.codeproject.com/Articles/277576/AJAX-based-CRUD-tables-using-ASP-NET-MVC-and-jTa"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+AJAX based CRUD tables using ASP.NET MVC 3 and jTable jQuery plug-in}} \
+\pard\pardeftab720
+
+\f2\fs24 \cf0 \expnd0\expndtw0\kerning0
+\
+}
